@@ -7,7 +7,7 @@ ENV APP_DIR /home/app
 # Use baseimage-docker's init process.
 CMD ["/sbin/my_init"]
 
-RUN apt-get -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" install libpq-dev python-dev python-imaging
+RUN apt-get -y install libpq-dev python-dev python-imaging zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev libtiff5-dev libjpeg8-dev
 
 # Enable nginx and passenger
 RUN rm -f /etc/service/nginx/down
