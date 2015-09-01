@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
 	python-pip \
 	python-dev \
 	libjpeg-dev \
+	libpq-dev \
 	nodejs
 
 RUN ln -sf /usr/bin/nodejs /usr/bin/node	
