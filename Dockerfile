@@ -1,8 +1,12 @@
 FROM lucaslsl/passenger
 
+RUN mkdir /home/app/mytest
+
 # Set correct environment variables.
 ENV HOME /root
-ENV APP_DIR /home/app
+ENV APP_DIR /home/app/mytest
+
+
 
 # Use baseimage-docker's init process.
 CMD ["/sbin/my_init"]
