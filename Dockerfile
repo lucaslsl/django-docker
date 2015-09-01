@@ -18,11 +18,13 @@ RUN mkdir /home/app/mytest
 ENV HOME /root
 ENV APP_DIR /home/app/mytest
 
+
 # Add the sails app
 COPY ./app ${APP_DIR}
 
 # Build app
-WORKDIR ${APP_DIR}
+ADD ./app/requirements.txt /tmp/requirements.txt
+WORKDIR /tmp
 RUN pip install -r requirements.txt
 
 
