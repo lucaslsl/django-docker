@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
 	libjpeg-dev \
 	nodejs
 
-RUN ln -s /usr/bin/nodejs /usr/bin/node	
+RUN ln -sf /usr/bin/nodejs /usr/bin/node	
 
 
 RUN mkdir /home/app/mytest
