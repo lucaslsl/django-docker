@@ -21,13 +21,13 @@ ENV APP_DIR /home/app/mytest
 
 
 # Build app
-ADD ./app/requirements.txt /app/mytest/requirements.txt
-RUN pip install -r /app/mytest/requirements.txt
+WORKDIR /home/app/mytest
+ADD ./requirements.txt /home/app/mytest/requirements.txt
+RUN pip install -r /home/app/mytest/requirements.txt
 
 # Add the sails app
-COPY ./app ${APP_DIR}
+ADD ./app ${APP_DIR}
 
-WORKDIR /home/app/mytest
 
 
 # Use baseimage-docker's init process.
